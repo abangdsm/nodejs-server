@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn NodeJS</title>
+</head>
+<body>
+    <h1><%= title %></h1>
+
+    <div>
+        <table border="1px">
+            <tr>
+                <th>Nama</th>
+                <th>Ucapan</th>
+            </tr>
+            <% for(let ucap of ucapan) { %>
+            <tr>
+                <td><%= ucap.nama_lengkap %></td>
+                <td><%= ucap.ucapan %></td>
+            </tr>
+            <% } %>
+        </table>
+    </div>
+
+    <br>
+
+    <div>
+        <form action="/tambah" method="POST">
+            <div>
+                <label for="nama_lengkap">Nama Lengkap:</label><br>
+                <input type="text" name="nama_lengkap" id="nama_lengkap">
+            </div>
+            <br>
+            <div>
+                <label for="ucapan">Ucapan & Doa</label><br>
+                <textarea name="ucapan" id="ucapan" cols="30" rows="10"></textarea>
+            </div>
+            <br>
+            <div>
+                <button type="submit" name="btn-kirim"> Kirim </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
